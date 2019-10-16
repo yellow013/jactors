@@ -1,1 +1,1 @@
-# jactors
+# actors
