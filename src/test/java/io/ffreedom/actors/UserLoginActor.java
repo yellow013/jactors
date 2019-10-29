@@ -1,17 +1,13 @@
 package io.ffreedom.actors;
 
-import akka.actor.AbstractActor;
-import akka.actor.ActorRef;
 import akka.actor.Props;
+import io.ffreedom.actors.reference.SingleGenericActor;
 
-public class UserLoginActor extends AbstractActor {
+public class UserLoginActor extends SingleGenericActor<User> {
 //    private Object parameters;
 
 	public static Props props() {
 		return Props.create(UserLoginActor.class, UserLoginActor::new);
-	}
-
-	private UserLoginActor() {
 	}
 
 	// 如果有构造参数, 便按照如下方式构造 Props 即可
@@ -24,15 +20,18 @@ public class UserLoginActor extends AbstractActor {
 //    }
 
 	@Override
-	public Receive createReceive() {
-		return receiveBuilder().match(User.class, this::handleUser).matchAny(this::handleElse).build();
+	protected void handle(User user) {
+		System.out.println("received user -> userId==[" + user.getUserId() + "], userName==[" + user.getUserName()
+				+ "], age==[" + user.getAge() + "]");
 	}
 
-	private void handleUser(User user) {
-		getSender().tell("received user ", ActorRef.noSender());
+	@Override
+	protected Class<User> getType() {
+		return User.class;
 	}
 
-	private void handleElse(Object obj) {
+	@Override
+	protected void handleUnknown(Object obj) {
 
 	}
 
