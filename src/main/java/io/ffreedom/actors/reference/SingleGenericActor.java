@@ -1,13 +1,22 @@
-package io.ffreedom.actors;
+package io.ffreedom.actors.reference;
 
-import akka.actor.AbstractActor;
+import io.ffreedom.actors.base.CommonActor;
 
-public class CommonActor extends AbstractActor{
+public abstract class SingleGenericActor<T> extends CommonActor {
+
+	private Class<T> type;
+
+	protected SingleGenericActor() {
+		this.type = getType();
+	}
 
 	@Override
-	public Receive createReceive() {
-		// TODO Auto-generated method stub
-		return null;
+	public final Receive createReceive() {
+		return newReceiveBuilder().match(type, this::handle).build();
 	}
+
+	protected abstract Class<T> getType();
+
+	protected abstract void handle(T t);
 
 }
