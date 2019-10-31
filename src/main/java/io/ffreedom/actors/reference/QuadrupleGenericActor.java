@@ -18,8 +18,8 @@ public abstract class QuadrupleGenericActor<T1, T2, T3, T4> extends CommonActor 
 
 	@Override
 	public final Receive createReceive() {
-		return newReceiveBuilder().match(type1, this::handleType1).match(type2, this::handleType2)
-				.match(type3, this::handleType3).match(type4, this::handleType4).build();
+		return receiveBuilder().match(type1, this::handleType1).match(type2, this::handleType2)
+				.match(type3, this::handleType3).match(type4, this::handleType4).matchAny(super::handleUnknown).build();
 	}
 
 	protected abstract Class<T1> getType1();

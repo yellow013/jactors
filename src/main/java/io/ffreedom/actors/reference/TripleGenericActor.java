@@ -16,8 +16,8 @@ public abstract class TripleGenericActor<T1, T2, T3> extends CommonActor {
 
 	@Override
 	public final Receive createReceive() {
-		return newReceiveBuilder().match(type1, this::handleType1).match(type2, this::handleType2)
-				.match(type3, this::handleType3).build();
+		return receiveBuilder().match(type1, this::handleType1).match(type2, this::handleType2)
+				.match(type3, this::handleType3).matchAny(super::handleUnknown).build();
 	}
 
 	protected abstract Class<T1> getType1();

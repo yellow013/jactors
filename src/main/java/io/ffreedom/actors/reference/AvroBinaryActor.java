@@ -16,13 +16,13 @@ public abstract class AvroBinaryActor extends SingleGenericActor<ByteBuffer> {
 	protected final void handle(ByteBuffer binary) {
 		try {
 			AvroMessage message = AvroMessage.fromByteBuffer(binary);
-			handleAvroMessage(message.getMsgType(), message.getMsgContent());
+			handleAvroMessage(message);
 		} catch (IOException e) {
 			logger.error("ByteBuffer deserialization throw IOException, message==[{}], binary.capacity==[{}]",
 					e.getMessage(), binary.capacity(), e);
 		}
 	}
 
-	protected abstract void handleAvroMessage(int msgType, ByteBuffer msgContent);
+	protected abstract void handleAvroMessage(AvroMessage message);
 
 }

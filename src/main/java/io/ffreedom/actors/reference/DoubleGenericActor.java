@@ -14,7 +14,8 @@ public abstract class DoubleGenericActor<T1, T2> extends CommonActor {
 
 	@Override
 	public final Receive createReceive() {
-		return newReceiveBuilder().match(type1, this::handleType1).match(type2, this::handleType2).build();
+		return receiveBuilder().match(type1, this::handleType1).match(type2, this::handleType2)
+				.matchAny(super::handleUnknown).build();
 	}
 
 	protected abstract Class<T1> getType1();

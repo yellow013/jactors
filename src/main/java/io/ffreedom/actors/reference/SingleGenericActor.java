@@ -12,7 +12,7 @@ public abstract class SingleGenericActor<T> extends CommonActor {
 
 	@Override
 	public final Receive createReceive() {
-		return newReceiveBuilder().match(type, this::handle).build();
+		return receiveBuilder().match(type, this::handle).matchAny(super::handleUnknown).build();
 	}
 
 	protected abstract Class<T> getType();
