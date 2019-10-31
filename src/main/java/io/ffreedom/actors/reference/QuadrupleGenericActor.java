@@ -10,32 +10,32 @@ public abstract class QuadrupleGenericActor<T1, T2, T3, T4> extends CommonActor 
 	private Class<T4> type4;
 
 	protected QuadrupleGenericActor() {
-		this.type1 = getType1();
-		this.type2 = getType2();
-		this.type3 = getType3();
-		this.type4 = getType4();
+		this.type1 = eventType1();
+		this.type2 = eventType2();
+		this.type3 = eventType3();
+		this.type4 = eventType4();
 	}
 
 	@Override
 	public final Receive createReceive() {
-		return receiveBuilder().match(type1, this::handleType1).match(type2, this::handleType2)
-				.match(type3, this::handleType3).match(type4, this::handleType4).matchAny(super::handleUnknown).build();
+		return receiveBuilder().match(type1, this::onEvent1).match(type2, this::onEvent2).match(type3, this::onEvent3)
+				.match(type4, this::onEvent4).matchAny(super::handleUnknown).build();
 	}
 
-	protected abstract Class<T1> getType1();
+	protected abstract Class<T1> eventType1();
 
-	protected abstract Class<T2> getType2();
+	protected abstract Class<T2> eventType2();
 
-	protected abstract Class<T3> getType3();
+	protected abstract Class<T3> eventType3();
 
-	protected abstract Class<T4> getType4();
+	protected abstract Class<T4> eventType4();
 
-	protected abstract void handleType1(T1 t1);
+	protected abstract void onEvent1(T1 t1);
 
-	protected abstract void handleType2(T2 t2);
+	protected abstract void onEvent2(T2 t2);
 
-	protected abstract void handleType3(T3 t2);
+	protected abstract void onEvent3(T3 t2);
 
-	protected abstract void handleType4(T4 t4);
+	protected abstract void onEvent4(T4 t4);
 
 }

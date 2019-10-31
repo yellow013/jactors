@@ -9,27 +9,27 @@ public abstract class TripleGenericActor<T1, T2, T3> extends CommonActor {
 	private Class<T3> type3;
 
 	protected TripleGenericActor() {
-		this.type1 = getType1();
-		this.type2 = getType2();
-		this.type3 = getType3();
+		this.type1 = eventType1();
+		this.type2 = eventType2();
+		this.type3 = eventType3();
 	}
 
 	@Override
 	public final Receive createReceive() {
-		return receiveBuilder().match(type1, this::handleType1).match(type2, this::handleType2)
-				.match(type3, this::handleType3).matchAny(super::handleUnknown).build();
+		return receiveBuilder().match(type1, this::onEvent1).match(type2, this::onEvent2).match(type3, this::onEvent3)
+				.matchAny(super::handleUnknown).build();
 	}
 
-	protected abstract Class<T1> getType1();
+	protected abstract Class<T1> eventType1();
 
-	protected abstract Class<T2> getType2();
+	protected abstract Class<T2> eventType2();
 
-	protected abstract Class<T3> getType3();
+	protected abstract Class<T3> eventType3();
 
-	protected abstract void handleType1(T1 t1);
+	protected abstract void onEvent1(T1 t1);
 
-	protected abstract void handleType2(T2 t2);
+	protected abstract void onEvent2(T2 t2);
 
-	protected abstract void handleType3(T3 t2);
+	protected abstract void onEvent3(T3 t2);
 
 }
