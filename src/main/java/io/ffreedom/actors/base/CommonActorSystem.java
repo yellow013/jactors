@@ -17,7 +17,11 @@ public final class CommonActorSystem {
 
 	private final LoggingAdapter logger;
 
-	public CommonActorSystem(String name) {
+	public static final CommonActorSystem newInstance(String name) {
+		return new CommonActorSystem(name);
+	}
+
+	private CommonActorSystem(String name) {
 		this.internal = ActorSystem.create(name);
 		this.logger = Logging.getLogger(internal, this);
 		// Add ShutdownHook
@@ -25,10 +29,10 @@ public final class CommonActorSystem {
 	}
 
 	private void terminateActorSystem() {
+		logger.info("ActorSystem {} is terminated...", internal.name());
 		Future<Terminated> terminate = internal.terminate();
 		while (!terminate.isCompleted())
 			ThreadUtil.sleep(100);
-		logger.info("ActorSystem root is terminated...");
 	}
 
 	public ActorSystem getInternal() {
