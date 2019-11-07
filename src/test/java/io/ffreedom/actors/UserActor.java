@@ -31,7 +31,8 @@ public class UserActor extends SingleGenericActor<User> {
 	}
 
 	@Override
-	protected void handleUnknown(Object obj) {
+	protected void handleUnknown0(Object t) {
+		// TODO Auto-generated method stub
 
 	}
 
