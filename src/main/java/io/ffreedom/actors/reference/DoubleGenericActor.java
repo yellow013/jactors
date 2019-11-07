@@ -14,8 +14,13 @@ public abstract class DoubleGenericActor<T1, T2> extends CommonActor {
 
 	@Override
 	public final Receive createReceive() {
-		return receiveBuilder().match(type1, this::onEvent1).match(type2, this::onEvent2).matchAny(super::handleUnknown)
+		return receiveBuilder().match(type1, this::onEvent1).match(type2, this::onEvent2).matchAny(this::handleUnknown)
 				.build();
+	}
+	
+	private void handleUnknown(Object obj) {
+		commonHandleUnknown(obj);
+		handleUnknown0(obj);
 	}
 
 	protected abstract Class<T1> eventType1();
@@ -25,5 +30,7 @@ public abstract class DoubleGenericActor<T1, T2> extends CommonActor {
 	protected abstract void onEvent1(T1 t1);
 
 	protected abstract void onEvent2(T2 t2);
+	
+	protected abstract void handleUnknown0(Object t);
 
 }

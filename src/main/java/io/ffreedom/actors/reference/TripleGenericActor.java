@@ -17,7 +17,12 @@ public abstract class TripleGenericActor<T1, T2, T3> extends CommonActor {
 	@Override
 	public final Receive createReceive() {
 		return receiveBuilder().match(type1, this::onEvent1).match(type2, this::onEvent2).match(type3, this::onEvent3)
-				.matchAny(super::handleUnknown).build();
+				.matchAny(this::handleUnknown).build();
+	}
+	
+	private void handleUnknown(Object obj) {
+		commonHandleUnknown(obj);
+		handleUnknown0(obj);
 	}
 
 	protected abstract Class<T1> eventType1();
@@ -31,5 +36,7 @@ public abstract class TripleGenericActor<T1, T2, T3> extends CommonActor {
 	protected abstract void onEvent2(T2 t2);
 
 	protected abstract void onEvent3(T3 t2);
+	
+	protected abstract void handleUnknown0(Object t);
 
 }
