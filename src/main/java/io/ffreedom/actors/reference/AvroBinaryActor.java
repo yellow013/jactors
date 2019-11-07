@@ -5,6 +5,7 @@ import java.nio.ByteBuffer;
 
 import io.ffreedom.actors.messages.AvroMsg;
 
+
 public abstract class AvroBinaryActor extends SingleGenericActor<ByteBuffer> {
 
 	@Override
