@@ -30,14 +30,14 @@ public abstract class SimpleDealerActor<T> extends DoubleGenericActor<ActorRef, 
 		if (registered.isEmpty())
 			handleRegisteredIsEmpty(t2);
 		else
-			registered.get(nextActor()).tell(t2, self);
+			registered.get(nextActorIndex()).forward(t2, getContext());
 	}
 
 	private void handleRegisteredIsEmpty(T t2) {
 		// TODO
 	}
 
-	private int nextActor() {
+	private int nextActorIndex() {
 		if (++turn == registered.size())
 			turn = 0;
 		return turn;
