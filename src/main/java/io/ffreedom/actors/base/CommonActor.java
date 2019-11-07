@@ -2,6 +2,7 @@ package io.ffreedom.actors.base;
 
 import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
+import akka.actor.Props;
 import akka.event.Logging;
 import akka.event.LoggingAdapter;
 
@@ -22,6 +23,11 @@ public abstract class CommonActor extends AbstractActor {
 	protected void stop() {
 		logger.info("Destroy -> {}", self);
 		getContext().stop(self);
+	}
+
+	protected static <T> Props createProps(Class<T> actorClass, akka.japi.Creator<T> creator) {
+		return Props.create(
+				actorClass, creator);
 	}
 
 	/**
