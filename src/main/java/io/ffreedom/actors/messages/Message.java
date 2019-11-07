@@ -1,16 +1,17 @@
 package io.ffreedom.actors.messages;
 
-public class RegisterMsg {
+public interface Message {
 
-	private final String actor;
+	Envelope envelope();
 
-	public RegisterMsg(String actor) {
-		super();
-		this.actor = actor;
+	Content content();
+
+	public interface Envelope {
+
 	}
 
-	public String getActor() {
-		return actor;
+	public interface Content {
+
 	}
 
 }
