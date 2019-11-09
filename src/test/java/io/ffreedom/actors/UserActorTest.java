@@ -1,6 +1,7 @@
 package io.ffreedom.actors;
 
 import akka.actor.ActorRef;
+import akka.actor.ActorSelection;
 import io.ffreedom.actors.base.CommonActorSystem;
 import io.ffreedom.common.thread.ThreadUtil;
 
@@ -10,11 +11,20 @@ public class UserActorTest {
 
 		CommonActorSystem actorSystem = CommonActorSystem.newInstance("data-center");
 
-		ActorRef userLoginActor = actorSystem.actorOf(UserActor.props(), UserActor.class.getName());
+		ActorRef userActor1 = actorSystem.actorOf(UserActor.props(), "user1");
+		ActorRef userActor2 = actorSystem.actorOf(UserActor.props(), "user2");
+		ActorRef userActor3 = actorSystem.actorOf(UserActor.props(), "user3");
+		ActorRef userActor4 = actorSystem.actorOf(UserActor.props(), "user4");
 
-		userLoginActor.tell(new User(1, "user1", 10), ActorRef.noSender());
-		userLoginActor.tell("dafaf", ActorRef.noSender());
-
+		userActor1.tell(new User(1, "user1", 10), ActorRef.noSender());
+		userActor2.tell("dafaf", ActorRef.noSender());
+		userActor3.tell(new User(1, "user1", 10), ActorRef.noSender());
+		userActor4.tell(new User(1, "user1", 10), ActorRef.noSender());
+		
+		ActorSelection actorSelectionOf = actorSystem.actorSelectionOf("user");
+		
+		System.out.println(actorSelectionOf.pathString());
+		
 		ThreadUtil.sleep(3000);
 		System.exit(0);
 
