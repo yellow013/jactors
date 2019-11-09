@@ -2,8 +2,10 @@ package io.ffreedom.actors;
 
 import akka.actor.ActorRef;
 import akka.actor.ActorSelection;
+import akka.pattern.Patterns;
 import io.ffreedom.actors.base.CommonActorSystem;
 import io.ffreedom.common.thread.ThreadUtil;
+import scala.concurrent.Future;
 
 public class UserActorTest {
 
@@ -22,6 +24,8 @@ public class UserActorTest {
 		userActor4.tell(new User(1, "user1", 10), ActorRef.noSender());
 		
 		ActorSelection actorSelectionOf = actorSystem.actorSelectionOf("user");
+		
+		Future<Object> ask = Patterns.ask(userActor1, 5, 1000);
 		
 		System.out.println(actorSelectionOf.pathString());
 		
