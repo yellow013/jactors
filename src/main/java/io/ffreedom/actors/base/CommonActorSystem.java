@@ -35,8 +35,12 @@ public final class CommonActorSystem {
 			ThreadUtil.sleep(100);
 	}
 
-	public ActorSystem getInternal() {
+	public ActorSystem internal() {
 		return internal;
+	}
+
+	public String name() {
+		return internal.name();
 	}
 
 	public ActorRef actorOf(Props props) {
@@ -45,6 +49,10 @@ public final class CommonActorSystem {
 
 	public ActorRef actorOf(Props props, String name) {
 		return internal.actorOf(props, name);
+	}
+
+	public ActorRef deadLetters() {
+		return internal.deadLetters();
 	}
 
 	public ActorSelection actorSelectionOf(String path) {
