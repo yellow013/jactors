@@ -1,10 +1,10 @@
-package io.ffreedom.actors;
+package io.mercury.actors;
 
 import org.eclipse.collections.api.list.MutableList;
 
 import akka.actor.ActorRef;
-import io.ffreedom.actors.reference.DoubleGenericActor;
 import io.ffreedom.common.collections.MutableLists;
+import io.mercury.actors.reference.DoubleGenericActor;
 
 public abstract class SimpleDealerActor<T> extends DoubleGenericActor<ActorRef, T> {
 

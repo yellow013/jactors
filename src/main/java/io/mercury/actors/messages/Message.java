@@ -1,4 +1,4 @@
-package io.ffreedom.actors.messages;
+package io.mercury.actors.messages;
 
 public interface Message {
 

@@ -1,6 +1,6 @@
-package io.ffreedom.actors.reference;
+package io.mercury.actors.reference;
 
-import io.ffreedom.actors.base.CommonActor;
+import io.mercury.actors.base.CommonActor;
 
 public abstract class TripleGenericActor<T1, T2, T3> extends CommonActor {
 
