@@ -4,18 +4,19 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>io.ffreedom</groupId>
+	<groupId>io.mercury</groupId>
 	<artifactId>actors</artifactId>
 	<version>0.1</version>
 
 	<packaging>jar</packaging>
-	<name>polaris</name>
+	<name>actors</name>
 
-	<url>https://github.com/yellow013/jactors.git</url>
+	<url>https://github.com/yellow013/actors.git</url>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<akka.version>2.5.26</akka.version>
+		<persistence.version>1.0-SNAPSHOT</persistence.version>
 	</properties>
 
 	<build>
@@ -155,14 +156,9 @@
 		</dependency>
 
 		<dependency>
-			<groupId>io.ffreedom</groupId>
-			<artifactId>commons-core</artifactId>
-			<version>1.0-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>io.ffreedom</groupId>
-			<artifactId>commons-chronicle</artifactId>
-			<version>1.0-SNAPSHOT</version>
+			<groupId>io.mercury</groupId>
+			<artifactId>persistence-chronicle</artifactId>
+			<version>${persistence.version}</version>
 		</dependency>
 	</dependencies>
 
@@ -178,5 +174,5 @@
 			<url>http://203.60.1.16:10000/nexus/repository/maven-snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement>
-	
+
 </project>
