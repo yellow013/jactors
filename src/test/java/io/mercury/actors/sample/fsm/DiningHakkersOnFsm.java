@@ -1,4 +1,4 @@
-package io.ffreedom.actors.sample.fsm;
+package io.mercury.actors.sample.fsm;
 
 import akka.actor.*;
 import java.util.ArrayList;
@@ -7,7 +7,7 @@ import java.util.List;
 import scala.concurrent.duration.Duration;
 import scala.concurrent.duration.FiniteDuration;
 
-import static io.ffreedom.actors.sample.fsm.Messages.*;
+import static io.mercury.actors.sample.fsm.Messages.*;
 import static java.util.concurrent.TimeUnit.*;
 
 // Akka adaptation of

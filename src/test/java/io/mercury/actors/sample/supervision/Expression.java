@@ -1,4 +1,4 @@
-package io.ffreedom.actors.sample.supervision;
+package io.mercury.actors.sample.supervision;
 
 // Represents an arithmetic expression involving integer numbers
 public interface Expression {

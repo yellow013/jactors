@@ -1,4 +1,4 @@
-package io.ffreedom.actors.sample.fsm.typed;
+package io.mercury.actors.sample.fsm.typed;
 
 import akka.actor.typed.ActorRef;
 

@@ -1,10 +1,10 @@
-package io.ffreedom.actors.sample.supervision;
+package io.mercury.actors.sample.supervision;
 
 import akka.actor.*;
 import akka.japi.pf.DeciderBuilder;
 
-import static io.ffreedom.actors.sample.supervision.Expression.*;
-import static io.ffreedom.actors.sample.supervision.FlakyExpressionCalculator.Position.*;
+import static io.mercury.actors.sample.supervision.Expression.*;
+import static io.mercury.actors.sample.supervision.FlakyExpressionCalculator.Position.*;
 
 import java.util.HashMap;
 import java.util.Map;

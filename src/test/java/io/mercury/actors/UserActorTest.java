@@ -1,10 +1,10 @@
-package io.ffreedom.actors;
+package io.mercury.actors;
 
 import akka.actor.ActorRef;
 import akka.actor.ActorSelection;
 import akka.pattern.Patterns;
-import io.ffreedom.actors.base.CommonActorSystem;
 import io.ffreedom.common.thread.ThreadUtil;
+import io.mercury.actors.base.CommonActorSystem;
 import scala.concurrent.Future;
 
 public class UserActorTest {
@@ -22,13 +22,14 @@ public class UserActorTest {
 		userActor2.tell("dafaf", ActorRef.noSender());
 		userActor3.tell(new User(1, "user1", 10), ActorRef.noSender());
 		userActor4.tell(new User(1, "user1", 10), ActorRef.noSender());
-		
+
 		ActorSelection actorSelectionOf = actorSystem.actorSelectionOf("user");
-		
+
+		@SuppressWarnings("unused")
 		Future<Object> ask = Patterns.ask(userActor1, 5, 1000);
-		
+
 		System.out.println(actorSelectionOf.pathString());
-		
+
 		ThreadUtil.sleep(3000);
 		System.exit(0);
 

@@ -1,4 +1,4 @@
-package io.ffreedom.actors.sample.supervision;
+package io.mercury.actors.sample.supervision;
 
 import akka.actor.ActorRef;
 import akka.actor.Props;
@@ -10,7 +10,7 @@ import scala.concurrent.duration.FiniteDuration;
 import java.util.concurrent.TimeUnit;
 
 import static akka.pattern.Patterns.ask;
-import static io.ffreedom.actors.sample.supervision.Expression.*;
+import static io.mercury.actors.sample.supervision.Expression.*;
 import static akka.japi.Util.classTag;
 
 public class Main {

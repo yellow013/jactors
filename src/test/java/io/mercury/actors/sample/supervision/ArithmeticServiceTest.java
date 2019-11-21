@@ -1,4 +1,4 @@
-package io.ffreedom.actors.sample.supervision;
+package io.mercury.actors.sample.supervision;
 
 import java.util.stream.IntStream;
 
@@ -11,10 +11,10 @@ import akka.actor.ActorSystem;
 import akka.actor.Props;
 import akka.actor.Status;
 import akka.testkit.javadsl.TestKit;
-import io.ffreedom.actors.sample.supervision.Expression.Add;
-import io.ffreedom.actors.sample.supervision.Expression.Const;
-import io.ffreedom.actors.sample.supervision.Expression.Divide;
-import io.ffreedom.actors.sample.supervision.Expression.Multiply;
+import io.mercury.actors.sample.supervision.Expression.Add;
+import io.mercury.actors.sample.supervision.Expression.Const;
+import io.mercury.actors.sample.supervision.Expression.Divide;
+import io.mercury.actors.sample.supervision.Expression.Multiply;
 
 public class ArithmeticServiceTest {
 	static ActorSystem system;

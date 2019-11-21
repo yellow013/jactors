@@ -1,4 +1,4 @@
-package io.ffreedom.actors.sample.fsm.typed;
+package io.mercury.actors.sample.fsm.typed;
 
 import akka.NotUsed;
 import akka.actor.typed.ActorRef;
@@ -7,7 +7,7 @@ import akka.actor.typed.Behavior;
 import akka.actor.typed.javadsl.ActorContext;
 import akka.actor.typed.javadsl.Behaviors;
 
-import static io.ffreedom.actors.sample.fsm.typed.Messages.*;
+import static io.mercury.actors.sample.fsm.typed.Messages.*;
 
 import java.time.Duration;
 import java.util.ArrayList;

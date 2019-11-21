@@ -1,7 +1,7 @@
-package io.ffreedom.actors.sample.fsm.become;
+package io.mercury.actors.sample.fsm.become;
 
-import static io.ffreedom.actors.sample.fsm.become.Messages.Eat;
-import static io.ffreedom.actors.sample.fsm.become.Messages.Think;
+import static io.mercury.actors.sample.fsm.become.Messages.Eat;
+import static io.mercury.actors.sample.fsm.become.Messages.Think;
 import static java.util.concurrent.TimeUnit.MILLISECONDS;
 import static java.util.concurrent.TimeUnit.SECONDS;
 
@@ -13,10 +13,10 @@ import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
 import akka.actor.Props;
-import io.ffreedom.actors.sample.fsm.become.Messages.Busy;
-import io.ffreedom.actors.sample.fsm.become.Messages.Put;
-import io.ffreedom.actors.sample.fsm.become.Messages.Take;
-import io.ffreedom.actors.sample.fsm.become.Messages.Taken;
+import io.mercury.actors.sample.fsm.become.Messages.Busy;
+import io.mercury.actors.sample.fsm.become.Messages.Put;
+import io.mercury.actors.sample.fsm.become.Messages.Take;
+import io.mercury.actors.sample.fsm.become.Messages.Taken;
 import scala.concurrent.duration.Duration;
 import scala.concurrent.duration.FiniteDuration;
 

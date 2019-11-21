@@ -1,7 +1,7 @@
-package io.ffreedom.actors;
+package io.mercury.actors;
 
 import akka.actor.Props;
-import io.ffreedom.actors.reference.SingleGenericActor;
+import io.mercury.actors.reference.SingleGenericActor;
 
 public class UserActor extends SingleGenericActor<User> {
 //    private Object parameters;

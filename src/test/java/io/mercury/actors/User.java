@@ -1,4 +1,4 @@
-package io.ffreedom.actors;
+package io.mercury.actors;
 
 public final class User {
 

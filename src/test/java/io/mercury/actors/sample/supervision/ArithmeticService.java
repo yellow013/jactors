@@ -1,11 +1,11 @@
-package io.ffreedom.actors.sample.supervision;
+package io.mercury.actors.sample.supervision;
 
 import akka.actor.*;
 import akka.japi.pf.DeciderBuilder;
 
-import static io.ffreedom.actors.sample.supervision.FlakyExpressionCalculator.FlakinessException;
-import static io.ffreedom.actors.sample.supervision.FlakyExpressionCalculator.Result;
-import static io.ffreedom.actors.sample.supervision.FlakyExpressionCalculator.Position.Left;
+import static io.mercury.actors.sample.supervision.FlakyExpressionCalculator.FlakinessException;
+import static io.mercury.actors.sample.supervision.FlakyExpressionCalculator.Result;
+import static io.mercury.actors.sample.supervision.FlakyExpressionCalculator.Position.Left;
 
 import java.util.HashMap;
 import java.util.Map;
