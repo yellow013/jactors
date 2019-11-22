@@ -1,5 +1,5 @@
 {
-    "namespace": "io.ffreedom.actors.messages",
+    "namespace": "io.mercury.actors.messages",
     "type": "record",
     "name": "AvroMsg",
     "fields": [
