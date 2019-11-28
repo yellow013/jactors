@@ -1,18 +1,19 @@
 package io.mercury.actors.sample.fsm.typed;
 
+import java.time.Duration;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import akka.NotUsed;
 import akka.actor.typed.ActorRef;
 import akka.actor.typed.ActorSystem;
 import akka.actor.typed.Behavior;
 import akka.actor.typed.javadsl.ActorContext;
 import akka.actor.typed.javadsl.Behaviors;
-
-import static io.mercury.actors.sample.fsm.typed.Messages.*;
-
-import java.time.Duration;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import io.mercury.actors.sample.fsm.typed.Messages.ChopstickAnswer;
+import io.mercury.actors.sample.fsm.typed.Messages.ChopstickMessage;
+import io.mercury.actors.sample.fsm.typed.Messages.HakkerMessage;
 
 public class DiningHakkersTyped {
 

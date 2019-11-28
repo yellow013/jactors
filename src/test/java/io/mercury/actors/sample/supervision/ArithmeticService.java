@@ -1,14 +1,18 @@
 package io.mercury.actors.sample.supervision;
 
-import akka.actor.*;
-import akka.japi.pf.DeciderBuilder;
-
-import static io.mercury.actors.sample.supervision.FlakyExpressionCalculator.FlakinessException;
-import static io.mercury.actors.sample.supervision.FlakyExpressionCalculator.Result;
 import static io.mercury.actors.sample.supervision.FlakyExpressionCalculator.Position.Left;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import akka.actor.AbstractLoggingActor;
+import akka.actor.ActorRef;
+import akka.actor.OneForOneStrategy;
+import akka.actor.Status;
+import akka.actor.SupervisorStrategy;
+import akka.japi.pf.DeciderBuilder;
+import io.mercury.actors.sample.supervision.FlakyExpressionCalculator.FlakinessException;
+import io.mercury.actors.sample.supervision.FlakyExpressionCalculator.Result;
 
 // A very simple service that accepts arithmetic expressions and tries to
 // evaluate them. Since the calculation is dangerous (at least for the sake

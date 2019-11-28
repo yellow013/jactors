@@ -13,9 +13,9 @@ import org.apache.avro.specific.SpecificData;
 @org.apache.avro.specific.AvroGenerated
 public class AvroMsg extends org.apache.avro.specific.SpecificRecordBase
 		implements org.apache.avro.specific.SpecificRecord {
-	private static final long serialVersionUID = 3421287419477597783L;
+	private static final long serialVersionUID = -2884863883826810699L;
 	public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse(
-			"{\"type\":\"record\",\"name\":\"AvroMsg\",\"namespace\":\"io.ffreedom.actors.messages\",\"fields\":[{\"name\":\"msgType\",\"type\":\"int\"},{\"name\":\"msgContent\",\"type\":\"bytes\"}]}");
+			"{\"type\":\"record\",\"name\":\"AvroMsg\",\"namespace\":\"io.mercury.actors.messages\",\"fields\":[{\"name\":\"msgType\",\"type\":\"int\"},{\"name\":\"msgContent\",\"type\":\"bytes\"}]}");
 
 	public static org.apache.avro.Schema getClassSchema() {
 		return SCHEMA$;

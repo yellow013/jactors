@@ -3,8 +3,8 @@ package io.mercury.actors;
 import org.eclipse.collections.api.list.MutableList;
 
 import akka.actor.ActorRef;
-import io.ffreedom.common.collections.MutableLists;
 import io.mercury.actors.reference.DoubleGenericActor;
+import io.mercury.common.collections.MutableLists;
 
 public abstract class SimpleDealerActor<T> extends DoubleGenericActor<ActorRef, T> {
 

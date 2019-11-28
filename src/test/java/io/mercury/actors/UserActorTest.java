@@ -3,8 +3,8 @@ package io.mercury.actors;
 import akka.actor.ActorRef;
 import akka.actor.ActorSelection;
 import akka.pattern.Patterns;
-import io.ffreedom.common.thread.ThreadUtil;
 import io.mercury.actors.base.CommonActorSystem;
+import io.mercury.common.thread.ThreadUtil;
 import scala.concurrent.Future;
 
 public class UserActorTest {

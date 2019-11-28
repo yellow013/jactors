@@ -1,14 +1,24 @@
 package io.mercury.actors.sample.fsm;
 
-import akka.actor.*;
+import static io.mercury.actors.sample.fsm.Messages.Put;
+import static io.mercury.actors.sample.fsm.Messages.Take;
+import static io.mercury.actors.sample.fsm.Messages.Think;
+import static java.util.concurrent.TimeUnit.MILLISECONDS;
+import static java.util.concurrent.TimeUnit.SECONDS;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import akka.actor.AbstractLoggingFSM;
+import akka.actor.ActorRef;
+import akka.actor.ActorSystem;
+import akka.actor.FSM;
+import akka.actor.Props;
+import io.mercury.actors.sample.fsm.Messages.Busy;
+import io.mercury.actors.sample.fsm.Messages.Taken;
 import scala.concurrent.duration.Duration;
 import scala.concurrent.duration.FiniteDuration;
-
-import static io.mercury.actors.sample.fsm.Messages.*;
-import static java.util.concurrent.TimeUnit.*;
 
 // Akka adaptation of
 // http://www.dalnefre.com/wp/2010/08/dining-philosophers-in-humus/

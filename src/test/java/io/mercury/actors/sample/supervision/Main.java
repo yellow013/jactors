@@ -1,17 +1,21 @@
 package io.mercury.actors.sample.supervision;
 
+import static akka.japi.Util.classTag;
+import static akka.pattern.Patterns.ask;
+
+import java.util.concurrent.TimeUnit;
+
 import akka.actor.ActorRef;
-import akka.actor.Props;
 import akka.actor.ActorSystem;
+import akka.actor.Props;
 import akka.util.Timeout;
+import io.mercury.actors.sample.supervision.Expression.Add;
+import io.mercury.actors.sample.supervision.Expression.Const;
+import io.mercury.actors.sample.supervision.Expression.Divide;
+import io.mercury.actors.sample.supervision.Expression.Multiply;
 import scala.concurrent.Await;
 import scala.concurrent.duration.Duration;
 import scala.concurrent.duration.FiniteDuration;
-import java.util.concurrent.TimeUnit;
-
-import static akka.pattern.Patterns.ask;
-import static io.mercury.actors.sample.supervision.Expression.*;
-import static akka.japi.Util.classTag;
 
 public class Main {
 

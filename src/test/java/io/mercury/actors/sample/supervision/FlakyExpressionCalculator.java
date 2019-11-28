@@ -1,10 +1,7 @@
 package io.mercury.actors.sample.supervision;
 
-import akka.actor.*;
-import akka.japi.pf.DeciderBuilder;
-
-import static io.mercury.actors.sample.supervision.Expression.*;
-import static io.mercury.actors.sample.supervision.FlakyExpressionCalculator.Position.*;
+import static io.mercury.actors.sample.supervision.FlakyExpressionCalculator.Position.Left;
+import static io.mercury.actors.sample.supervision.FlakyExpressionCalculator.Position.Right;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -12,6 +9,16 @@ import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import akka.actor.AbstractLoggingActor;
+import akka.actor.OneForOneStrategy;
+import akka.actor.Props;
+import akka.actor.SupervisorStrategy;
+import akka.japi.pf.DeciderBuilder;
+import io.mercury.actors.sample.supervision.Expression.Add;
+import io.mercury.actors.sample.supervision.Expression.Const;
+import io.mercury.actors.sample.supervision.Expression.Divide;
+import io.mercury.actors.sample.supervision.Expression.Multiply;
 
 public class FlakyExpressionCalculator extends AbstractLoggingActor {
 

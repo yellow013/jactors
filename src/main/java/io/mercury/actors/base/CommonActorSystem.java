@@ -8,7 +8,7 @@ import akka.actor.Props;
 import akka.actor.Terminated;
 import akka.event.Logging;
 import akka.event.LoggingAdapter;
-import io.ffreedom.common.thread.ThreadUtil;
+import io.mercury.common.thread.ThreadUtil;
 import scala.concurrent.Future;
 
 public final class CommonActorSystem {
