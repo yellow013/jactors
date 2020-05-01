@@ -192,4 +192,5 @@ public class DiningHakkersTyped {
 	public static void main(String[] args) {
 		ActorSystem.create(mainBehavior(), "DinningHakkers");
 	}
+	
 }
