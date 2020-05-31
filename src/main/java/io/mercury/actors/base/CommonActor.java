@@ -12,7 +12,7 @@ public abstract class CommonActor extends AbstractActor {
 	protected final LoggingAdapter logger = Logging.getLogger(getContext().getSystem(), this);
 
 	protected CommonActor() {
-		logger.info("Created -> {}", self);
+		logger.info("Created Actor -> {}", self);
 	}
 
 	protected void commonHandleUnknown(Object obj) {
@@ -20,7 +20,7 @@ public abstract class CommonActor extends AbstractActor {
 	}
 
 	protected void stop() {
-		logger.info("Destroy -> {}", self);
+		logger.info("Destroy Actor -> {}", self);
 		getContext().stop(self);
 	}
 

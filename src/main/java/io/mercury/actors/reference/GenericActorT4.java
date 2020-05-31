@@ -2,14 +2,14 @@ package io.mercury.actors.reference;
 
 import io.mercury.actors.base.CommonActor;
 
-public abstract class QuadrupleGenericActor<T1, T2, T3, T4> extends CommonActor {
+public abstract class GenericActorT4<T1, T2, T3, T4> extends CommonActor {
 
 	private Class<T1> type1;
 	private Class<T2> type2;
 	private Class<T3> type3;
 	private Class<T4> type4;
 
-	protected QuadrupleGenericActor() {
+	protected GenericActorT4() {
 		this.type1 = eventType1();
 		this.type2 = eventType2();
 		this.type3 = eventType3();
