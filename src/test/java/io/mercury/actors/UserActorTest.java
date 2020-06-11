@@ -4,7 +4,7 @@ import akka.actor.ActorRef;
 import akka.actor.ActorSelection;
 import akka.pattern.Patterns;
 import io.mercury.actors.base.CommonActorSystem;
-import io.mercury.common.thread.ThreadHelper;
+import io.mercury.common.thread.ThreadTool;
 import scala.concurrent.Future;
 
 public class UserActorTest {
@@ -30,7 +30,7 @@ public class UserActorTest {
 
 		System.out.println(actorSelectionOf.pathString());
 
-		ThreadHelper.sleep(3000);
+		ThreadTool.sleep(3000);
 		System.exit(0);
 
 	}
